@@ -1,0 +1,135 @@
+:root {
+    --bg-color: #0d0d12;
+    --accent-color: #00f3ff;
+    --accent-glow: rgba(0, 243, 255, 0.6);
+    --danger-color: #ff0055;
+    --text-color: #ffffff;
+    --panel-bg: rgba(20, 20, 30, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #1a1a24, #0d0d12);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through to canvas during game, enabled for screens below */
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(13, 13, 18, 0.7);
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+    pointer-events: none;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px var(--accent-glow);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.glow-btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: var(--bg-color);
+    background: var(--accent-color);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--accent-glow);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.glow-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px var(--accent-glow);
+    background: #fff;
+}
+
+.glow-btn:active {
+    transform: scale(0.95);
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    pointer-events: none;
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.controls-hint {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}

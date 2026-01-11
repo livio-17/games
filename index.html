@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Runner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="ui-layer">
+            <div id="start-screen" class="screen">
+                <h1 class="title">NEON RUNNER</h1>
+                <p class="subtitle">Click or Space to Jump</p>
+                <div class="controls-hint">Avoid spikes. Land on blocks.</div>
+                <button id="start-btn" class="glow-btn">START GAME</button>
+            </div>
+
+            <div id="game-over-screen" class="screen hidden">
+                <h1 class="title">CRASHED</h1>
+                <p class="score-display">Score: <span id="final-score">0</span></p>
+                <button id="restart-btn" class="glow-btn">RETRY</button>
+            </div>
+            
+            <div id="hud" class="hidden">
+                 <div class="score">SCORE: <span id="score">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
